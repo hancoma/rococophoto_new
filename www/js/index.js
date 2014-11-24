@@ -50,7 +50,7 @@ var app = {
          navigator.notification.activityStart("RococoPhoto", "loading");
 var ref = window.open('http://m.rococophoto.net', '_system', 'location=no');
 ref.addEventListener('loadstart', function(event) { 
-         navigator.notification.activityStart("Rococophoto", "loading");
+         navigator.notification.activityStart("RococoPhoto", "loading");
 
     
     });
@@ -62,6 +62,6 @@ ref.addEventListener('loadstart', function(event) {
 
 
 
-    
+
     }
 };
