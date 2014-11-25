@@ -86,7 +86,7 @@ sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
 });}
     function uploadPhoto(imageURI) {
         var options = new FileUploadOptions();
-        options.fileKey="file";
+        options.fileKey="profile_image";
         options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
         options.mimeType="image/jpeg";
 
