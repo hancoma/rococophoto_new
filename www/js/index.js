@@ -107,3 +107,10 @@ sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
         console.log("Sent = " + r.bytesSent);
         alert(r.response);
     }
+
+    function fail(error) {
+    alert("An error has occurred: Code = " + error.code);
+    console.log("upload error source " + error.source);
+    console.log("upload error target " + error.target);
+}
+
