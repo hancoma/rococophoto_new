@@ -96,7 +96,7 @@ sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
 
         options.params = params;
         options.chunkedMode = false;
-        alert( options.fileName);
+       
         var ft = new FileTransfer();
         ft.upload(imageURI, "http://m.rococophoto.net/upload.php", win, fail, options);
     }
