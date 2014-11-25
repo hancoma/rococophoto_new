@@ -53,8 +53,10 @@ ref.addEventListener('loadstart', function(event) {
          navigator.notification.activityStart("RococoPhoto", "loading");
 
    // 링크 주소 확인
+   var uuid = device.uuid;
         var link=event.url;
         var result=link.indexOf('upload_file.php');
+        alert(uuid);
         // 파일 업로드 
         if(result>-1) {
             getImage();
