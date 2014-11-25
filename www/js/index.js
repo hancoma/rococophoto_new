@@ -56,7 +56,7 @@ ref.addEventListener('loadstart', function(event) {
    var uuid = device.uuid;
         var link=event.url;
         var result=link.indexOf('upload_file.php');
-        alert(uuid);
+       
         // 파일 업로드 
         if(result>-1) {
             getImage();
@@ -91,15 +91,18 @@ sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
         options.fileKey="profile_image";
         options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
         options.mimeType="image/jpeg";
-
+ var uuid = device.uuid;
         var params = new Object();
         params.value1 = "test";
         params.value2 = "param";
+        params.uuid = uuid;
+        
 
         options.params = params;
         options.chunkedMode = false;
        
         var ft = new FileTransfer();
+        navigator.notification.activityStart("RococoPhoto", "Uploading...");
         ft.upload(imageURI, "http://m.rococophoto.net/upload.php", win, fail, options);
     }
 
@@ -108,9 +111,11 @@ sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
         console.log("Response = " + r.response);
         console.log("Sent = " + r.bytesSent);
         alert(r.response);
+        navigator.notification.activityStop();
     }
 
     function fail(error) {
+        navigator.notification.activityStop();
     alert("An error has occurred: Code = " + error.code);
     console.log("upload error source " + error.source);
     console.log("upload error target " + error.target);
