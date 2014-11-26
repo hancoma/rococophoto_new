@@ -51,7 +51,8 @@ var app = {
 
 
          navigator.notification.activityStart("RococoPhoto", "loading");
-var ref = window.open('http://m.rococophoto.net/?uuid='+uuid, '_system', 'location=no');
+         var link_home='http://m.rococophoto.net/?uuid='+uuid;
+var ref = window.open(link_home, '_system', 'location=no');
 ref.addEventListener('loadstart', function(event) { 
          navigator.notification.activityStart("RococoPhoto", "loading");
 
