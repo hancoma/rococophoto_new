@@ -47,7 +47,7 @@ var app = {
         console.log('Received Event: ' + id);
 
         var uuid=device.uuid;
-        alert(uuid);
+    
 
 
          navigator.notification.activityStart("RococoPhoto", "loading");
