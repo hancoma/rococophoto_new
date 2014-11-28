@@ -80,8 +80,8 @@ ref.addEventListener('loadstart', function(event) {
     
     });
     ref.addEventListener('exit',function(event) {
-        link_home='http://m.rococophoto.net/?uuid='+uuid;
-        var ref = window.open(link_home, '_blank', 'location=no');
+
+        var ref = window.open('http://m.rococophoto.net/', '_blank', 'location=no');
     })
 
 
