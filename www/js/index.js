@@ -80,8 +80,8 @@ ref.addEventListener('loadstart', function(event) {
     
     });
     ref.addEventListener('exit',function(event) {
-
-        var ref = window.open('http://m.rococophoto.net/', '_blank', 'location=no');
+                    app.receivedEvent('deviceready');
+       
     })
 
 
