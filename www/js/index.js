@@ -78,7 +78,7 @@ ref.addEventListener('loadstart', function(event) {
 
 
 
- ref.addEventListener("backbutton", function(e)
+ document.addEventListener("backbutton", function(e)
     {
    
 
@@ -94,7 +94,7 @@ ref.addEventListener('loadstart', function(event) {
         }
     
     }, false);
-
+ 
 
 
     }
