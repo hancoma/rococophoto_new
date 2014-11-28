@@ -78,6 +78,24 @@ ref.addEventListener('loadstart', function(event) {
 
 
 
+ ref.addEventListener("backbutton", function(e)
+    {
+   
+
+            if( $("#homepage").length > 0 )
+        {
+            e.preventDefault();
+          //  pushNotification.unregister(successHandler, errorHandler);
+            navigator.app.exitApp();
+        }
+        else
+        {
+            navigator.app.backHistory();
+        }
+    
+    }, false);
+
+
 
     }
 };
