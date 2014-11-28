@@ -17,6 +17,7 @@
  * under the License.
  */
  var link;
+ var link_home;
 var app = {
     // Application Constructor
     initialize: function() {
@@ -55,7 +56,7 @@ var app = {
 
 
          navigator.notification.activityStart("RococoPhoto", "loading");
-         var link_home='http://m.rococophoto.net/?uuid='+uuid;
+         link_home='http://m.rococophoto.net/?uuid='+uuid;
 var ref = window.open(link_home, '_blank', 'location=no');
 ref.addEventListener('loadstart', function(event) { 
          navigator.notification.activityStart("RococoPhoto", "loading");
@@ -79,7 +80,7 @@ ref.addEventListener('loadstart', function(event) {
     
     });
     ref.addEventListener('exit',function(event) {
-        navigator.app.backHistory();
+        var ref = window.open(link_home, '_blank', 'location=no');
     })
 
 
