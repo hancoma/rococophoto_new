@@ -60,7 +60,7 @@ ref.addEventListener('loadstart', function(event) {
    // 링크 주소 확인
    var uuid = device.uuid;
         link=event.url;
-        var result=link.indexOf('upload_file.php');
+        var result=link.indexOf('upload_file');
        
         // 파일 업로드 
         if(result>-1) {
@@ -94,7 +94,7 @@ destinationType: navigator.camera.DestinationType.FILE_URI,
 sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
 });}
     function uploadPhoto(imageURI) {
-      alert(link);
+    
         var options = new FileUploadOptions();
         options.fileKey="profile_image";
         options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
@@ -104,6 +104,7 @@ sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
         params.value1 = "test";
         params.value2 = "param";
         params.uuid = uuid;
+        params.link=link;
         
 
         options.params = params;
