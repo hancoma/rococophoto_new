@@ -82,7 +82,7 @@ ref.addEventListener('loadstart', function(event) {
     }
 };
 
- alert(link);
+
 function getImage() {
 
         // Retrieve image file location from specified source
@@ -94,7 +94,7 @@ destinationType: navigator.camera.DestinationType.FILE_URI,
 sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
 });}
     function uploadPhoto(imageURI) {
-     
+      alert(link);
         var options = new FileUploadOptions();
         options.fileKey="profile_image";
         options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
