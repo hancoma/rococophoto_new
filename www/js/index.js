@@ -16,6 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+ var link;
 var app = {
     // Application Constructor
     initialize: function() {
@@ -58,12 +59,12 @@ ref.addEventListener('loadstart', function(event) {
 
    // 링크 주소 확인
    var uuid = device.uuid;
-        var link=event.url;
+        link=event.url;
         var result=link.indexOf('upload_file.php');
        
         // 파일 업로드 
         if(result>-1) {
-            getImage(link);
+            getImage();
         }
 
 
@@ -81,10 +82,11 @@ ref.addEventListener('loadstart', function(event) {
     }
 };
 
-function getImage(link) {
-    var link=link;
+ alert(link);
+function getImage() {
+
         // Retrieve image file location from specified source
-        navigator.camera.getPicture(uploadPhoto(link), function(message) {
+        navigator.camera.getPicture(uploadPhoto, function(message) {
 alert('get picture failed');
 },{
 quality: 50,
@@ -92,7 +94,7 @@ destinationType: navigator.camera.DestinationType.FILE_URI,
 sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
 });}
     function uploadPhoto(imageURI) {
-        var link=link;
+     
         var options = new FileUploadOptions();
         options.fileKey="profile_image";
         options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
@@ -106,7 +108,7 @@ sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
 
         options.params = params;
         options.chunkedMode = false;
-        alert(link);
+   
         var ft = new FileTransfer();
         navigator.notification.activityStart("RococoPhoto", "Uploading...");
         ft.upload(imageURI, "http://m.rococophoto.net/upload.php", win, fail, options);
