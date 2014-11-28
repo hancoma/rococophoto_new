@@ -7,6 +7,9 @@
     <author email="support@phonegap.com" href="http://phonegap.com">
         PhoneGap Team
     </author>
+    <feature name="App">
+        <param name="android-package" value="org.apache.cordova.App" />
+    </feature>
     <preference name="permissions" value="none" />
     <preference name="phonegap-version" />
     <preference name="orientation" value="default" />
