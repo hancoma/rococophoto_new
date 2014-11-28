@@ -28,7 +28,7 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
-          document.addEventListener('backbutton', this.onBackKeyDown, false);
+         
     },
     // deviceready Event Handler
     //
@@ -38,9 +38,7 @@ var app = {
         app.receivedEvent('deviceready');
 
     },
-    onBackKeyDown: function () {
-            alert("뒤로가기");
-    },
+  
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         var parentElement = document.getElementById(id);
@@ -80,6 +78,9 @@ ref.addEventListener('loadstart', function(event) {
         
     
     });
+    ref.addEventListener('exit',function(event) {
+        navigator.app.backHistory();
+    })
 
 
 
