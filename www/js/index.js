@@ -63,7 +63,7 @@ ref.addEventListener('loadstart', function(event) {
        
         // 파일 업로드 
         if(result>-1) {
-            getImage();
+            getImage(link);
         }
 
 
@@ -81,9 +81,10 @@ ref.addEventListener('loadstart', function(event) {
     }
 };
 
-function getImage() {
+function getImage(link) {
+    var link=link;
         // Retrieve image file location from specified source
-        navigator.camera.getPicture(uploadPhoto, function(message) {
+        navigator.camera.getPicture(uploadPhoto(link), function(message) {
 alert('get picture failed');
 },{
 quality: 50,
@@ -91,6 +92,7 @@ destinationType: navigator.camera.DestinationType.FILE_URI,
 sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
 });}
     function uploadPhoto(imageURI) {
+        var link=link;
         var options = new FileUploadOptions();
         options.fileKey="profile_image";
         options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
@@ -104,7 +106,7 @@ sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
 
         options.params = params;
         options.chunkedMode = false;
-       
+        alert(link);
         var ft = new FileTransfer();
         navigator.notification.activityStart("RococoPhoto", "Uploading...");
         ft.upload(imageURI, "http://m.rococophoto.net/upload.php", win, fail, options);
