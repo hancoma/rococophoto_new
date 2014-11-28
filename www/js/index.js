@@ -119,13 +119,13 @@ sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
         console.log("Code = " + r.responseCode);
         console.log("Response = " + r.response);
         console.log("Sent = " + r.bytesSent);
-        alert(r.response);
+      //  alert(r.response);
         navigator.notification.activityStop();
     }
 
     function fail(error) {
         navigator.notification.activityStop();
-    alert("An error has occurred: Code = " + error.code);
+  //  alert("An error has occurred: Code = " + error.code);
     console.log("upload error source " + error.source);
     console.log("upload error target " + error.target);
 }
