@@ -97,6 +97,7 @@ ref.addEventListener('loadstart', function(event) {
     
     });
     ref.addEventListener('exit',function(event) {
+        ref.close();
          historyUrl.pop(); // 뒤로 갈 주소를 만들어 낸다. 
           if (historyUrl.length<=0) {
 
