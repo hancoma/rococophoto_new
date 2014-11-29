@@ -73,7 +73,7 @@ if (link_home) {
 }
 var ref = window.open(link_home, '_blank', 'location=no');
 ref.addEventListener('loadstart', function(event) { 
-         navigator.notification.activityStart("RococoPhoto", "loading");
+         
 
    // 링크 주소 확인
    var uuid = device.uuid;
@@ -97,7 +97,7 @@ ref.addEventListener('loadstart', function(event) {
     
     });
     ref.addEventListener('exit',function(event) {
-        ref.close();
+
          historyUrl.pop(); // 뒤로 갈 주소를 만들어 낸다. 
           if (historyUrl.length<=0) {
 
