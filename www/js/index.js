@@ -50,22 +50,25 @@ var app = {
     
 
 
-        
+        navigator.notification.activityStart("RococoPhoto", "loading");
+
 if (historyUrl.length >= 1) 
 {
 var link_home= historyUrl.pop(); // 이번 pop이 기존 url이다.
+    var ref = window.open(link_home, '_blank', 'location=no, clearcache=yes');
 } else{
 
          var link_home='http://m.rococophoto.net/index.php?uuid='+uuid;
+         var ref = window.open(link_home, '_blank', 'location=no, clearcache=yes');
 }
 if (link_home) {
 
 } else {
     var link_home='http://m.rococophoto.net/index.php';
+    var ref = window.open('http://m.rococophoto.net/index.php', '_blank', 'location=no, clearcache=yes');
 }
 
- navigator.notification.activityStart("RococoPhoto", "loading");
-var ref = window.open(encodeURI(link_home), '_blank', 'location=no, clearcache=yes');
+ 
 ref.addEventListener('loadstart', function(event) { 
         
 
@@ -91,6 +94,7 @@ ref.addEventListener('loadstart', function(event) {
     
     });
     ref.addEventListener('exit',function(event) {
+            navigator.notification.activityStop();
              for(x=0 ; x<30000 ; x++) {
                
             }
