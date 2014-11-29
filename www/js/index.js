@@ -69,7 +69,7 @@ var link_home= historyUrl.pop(); // 이번 pop이 기존 url이다.
 if (link_home) {
 
 } else {
-    var link_home='http://m.rococophoto.net/?uuid='+uuid;
+    var link_home='http://m.rococophoto.net/';
 }
 var ref = window.open(link_home, '_blank', 'location=no');
 ref.addEventListener('loadstart', function(event) { 
@@ -106,7 +106,7 @@ ref.addEventListener('loadstart', function(event) {
 
 
          }
-         
+
                     app.receivedEvent('deviceready');
        
     })
