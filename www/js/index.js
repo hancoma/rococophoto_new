@@ -50,7 +50,7 @@ var app = {
     
 
 
-        navigator.notification.activityStart("RococoPhoto", "loading"+historyUrl.length+historyUrl.pop());
+        navigator.notification.activityStart("RococoPhoto", "loading");
  var link_home='http://m.rococophoto.net/index.php?uuid='+uuid;
 if (historyUrl.length >= 1) 
 {
@@ -68,7 +68,9 @@ if (link_home) {
   
 }
  var ref = window.open(link_home, '_blank', 'location=no, clearcache=yes');
- 
+ ref.addEventListener('error',function(event) {
+
+ }
 ref.addEventListener('loadstart', function(event) { 
         
 
@@ -95,9 +97,7 @@ ref.addEventListener('loadstart', function(event) {
     });
     ref.addEventListener('exit',function(event) {
             navigator.notification.activityStop();
-             for(x=0 ; x<30000 ; x++) {
-               
-            }
+           
          historyUrl.pop(); // 뒤로 갈 주소를 만들어 낸다. 
           if (historyUrl.length<=0) {
 
@@ -108,7 +108,7 @@ ref.addEventListener('loadstart', function(event) {
 
          }
 
-                    app.receivedEvent('deviceready');
+                    this.bindEvents();
        
     })
 
