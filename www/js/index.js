@@ -70,7 +70,7 @@ if (link_home) {
 } else {
     var link_home='http://m.rococophoto.net/?uuid='+uuid;
 }
-var ref = window.open(link_home, '_blank', 'location=no');
+var ref = window.open(link_home, '_blank', 'location=yes');
 ref.addEventListener('loadstart', function(event) { 
          navigator.notification.activityStart("RococoPhoto", "loading");
 
