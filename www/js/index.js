@@ -44,14 +44,7 @@ var app = {
   
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
-
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
-
-        console.log('Received Event: ' + id);
+    
 
         var uuid=device.uuid;
     
@@ -70,10 +63,10 @@ if (link_home) {
 } else {
     var link_home='http://m.rococophoto.net/';
 }
-
+ navigator.notification.activityStart("RococoPhoto", "loading");
 var ref = window.open(encodeURI(link_home), '_blank', 'location=no, clearcache=yes');
 ref.addEventListener('loadstart', function(event) { 
-         navigator.notification.activityStart("RococoPhoto", "loading");
+        
 
    // 링크 주소 확인
    var uuid = device.uuid;
