@@ -58,14 +58,7 @@ var app = {
 
 
          navigator.notification.activityStart("RococoPhoto", "loading");
-         if (historyUrl.length<=0) {
-
-             if (confirm('프로그램을 종료하시겠습니까?')) {
-        navigator.app.exitApp();
-    }
-
-
-         }
+        
 if (historyUrl.length >= 1) 
 {
 var link_home= historyUrl.pop(); // 이번 pop이 기존 url이다.
@@ -105,6 +98,15 @@ ref.addEventListener('loadstart', function(event) {
     });
     ref.addEventListener('exit',function(event) {
          historyUrl.pop(); // 뒤로 갈 주소를 만들어 낸다. 
+          if (historyUrl.length<=0) {
+
+             if (confirm('프로그램을 종료하시겠습니까?')) {
+        navigator.app.exitApp();
+    }
+
+
+         }
+         
                     app.receivedEvent('deviceready');
        
     })
