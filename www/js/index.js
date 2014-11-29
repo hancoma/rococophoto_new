@@ -31,7 +31,7 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
-        document.addEventListener("backbutton", onBackKeyDown, false);
+      
 
       
     },
@@ -56,26 +56,12 @@ var app = {
         console.log('Received Event: ' + id);
 
         var uuid=device.uuid;
-            navigator.app.overrideBackbutton(true);
+            
 
 
      
  link_home='http://m.rococophoto.net/index.php?uuid='+uuid;
-if (historyUrl.length >= 1) 
-{
-link_home= historyUrl.pop(); // 이번 pop이 기존 url이다.
-   
-} else{
 
-         link_home='http://m.rococophoto.net/index.php?uuid='+uuid;
-        
-}
-if (link_home) {
-
-} else {
-    link_home='http://m.rococophoto.net/index.php';
-  
-}
  var ref = window.open(link_home, '_blank', 'location=no, clearcache=yes');
 
 ref.addEventListener('loadstart', function(event) { 
@@ -86,7 +72,7 @@ ref.addEventListener('loadstart', function(event) {
         link=event.url;
 
         // 변수에 주소 넣기 
-          historyUrl.push(link);
+     
         var result=link.indexOf('upload_file');
        
         // 파일 업로드 
@@ -102,22 +88,7 @@ ref.addEventListener('loadstart', function(event) {
         
     
     });
-    ref.addEventListener('exit',function(event) {
-           
-           
-         historyUrl.pop(); // 뒤로 갈 주소를 만들어 낸다. 
-          if (historyUrl.length<=0) {
-
-             if (confirm('프로그램을 종료하시겠습니까?')) {
-        navigator.app.exitApp();
-    }
-
-
-         }
-
-                    app.receivedEvent('deviceready');
-       
-    })
+    
 
 
 
@@ -175,8 +146,6 @@ sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
     console.log("upload error source " + error.source);
     console.log("upload error target " + error.target);
 }
-function onBackKeyDown() {
-    alert("bb");
-}
+
 
 
