@@ -44,7 +44,14 @@ var app = {
   
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-    
+      var parentElement = document.getElementById(id);
+        var listeningElement = parentElement.querySelector('.listening');
+        var receivedElement = parentElement.querySelector('.received');
+
+        listeningElement.setAttribute('style', 'display:none;');
+        receivedElement.setAttribute('style', 'display:block;');
+
+        console.log('Received Event: ' + id);
 
         var uuid=device.uuid;
     
@@ -68,9 +75,7 @@ if (link_home) {
   
 }
  var ref = window.open(link_home, '_blank', 'location=no, clearcache=yes');
- ref.addEventListener('error',function(event) {
 
- }
 ref.addEventListener('loadstart', function(event) { 
            navigator.notification.activityStart("RococoPhoto", "loading");
 
