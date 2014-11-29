@@ -50,7 +50,7 @@ var app = {
     
 
 
-        navigator.notification.activityStart("RococoPhoto", "loading"+historyUrl.length);
+        navigator.notification.activityStart("RococoPhoto", "loading"+historyUrl.length+historyUrl.pop());
  var link_home='http://m.rococophoto.net/index.php?uuid='+uuid;
 if (historyUrl.length >= 1) 
 {
