@@ -57,7 +57,6 @@ var app = {
     
 
 
-         
         
 if (historyUrl.length >= 1) 
 {
@@ -71,10 +70,10 @@ if (link_home) {
 } else {
     var link_home='http://m.rococophoto.net/';
 }
-//alert(link_home);
+alert(link_home);
 var ref = window.open(link_home, '_blank', 'location=no');
 ref.addEventListener('loadstart', function(event) { 
-         
+         navigator.notification.activityStart("RococoPhoto", "loading");
 
    // 링크 주소 확인
    var uuid = device.uuid;
@@ -93,7 +92,7 @@ ref.addEventListener('loadstart', function(event) {
     
     });
     ref.addEventListener('loadstop', function(event) { 
-       
+        navigator.notification.activityStop();
         
     
     });
