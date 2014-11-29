@@ -18,8 +18,9 @@
  */
  var link;
  var link_home;
+  var historyUrl = new Array(); // history를 저장할 배열, push와 pop을 이용 스택처럼 활용
+  var handle;
 var app = {
-
     // Application Constructor
     initialize: function() {
         this.bindEvents();
@@ -57,7 +58,13 @@ var app = {
 
 
          navigator.notification.activityStart("RococoPhoto", "loading");
+if (historyUrl.length >= 1) 
+{
+var link_home= historyUrl.pop(); // 이번 pop이 기존 url이다.
+} else{
+
          var link_home='http://m.rococophoto.net/?uuid='+uuid;
+}
 var ref = window.open(link_home, '_blank', 'location=no');
 ref.addEventListener('loadstart', function(event) { 
          navigator.notification.activityStart("RococoPhoto", "loading");
@@ -65,6 +72,9 @@ ref.addEventListener('loadstart', function(event) {
    // 링크 주소 확인
    var uuid = device.uuid;
         link=event.url;
+
+        // 변수에 주소 넣기 
+          historyUrl.push(url);
         var result=link.indexOf('upload_file');
        
         // 파일 업로드 
@@ -81,6 +91,7 @@ ref.addEventListener('loadstart', function(event) {
     
     });
     ref.addEventListener('exit',function(event) {
+         historyUrl.pop(); // 뒤로 갈 주소를 만들어 낸다. 
                     app.receivedEvent('deviceready');
        
     })
