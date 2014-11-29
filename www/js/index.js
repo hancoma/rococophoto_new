@@ -63,6 +63,7 @@ if (link_home) {
 } else {
     var link_home='http://m.rococophoto.net/';
 }
+alert(link_home);
  navigator.notification.activityStart("RococoPhoto", "loading");
 var ref = window.open(encodeURI(link_home), '_blank', 'location=no, clearcache=yes');
 ref.addEventListener('loadstart', function(event) { 
