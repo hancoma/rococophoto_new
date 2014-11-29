@@ -58,6 +58,14 @@ var app = {
 
 
          navigator.notification.activityStart("RococoPhoto", "loading");
+         if (historyUrl.length<=0) {
+
+             if (confirm('프로그램을 종료하시겠습니까?')) {
+        navigator.app.exitApp();
+    }
+
+
+         }
 if (historyUrl.length >= 1) 
 {
 var link_home= historyUrl.pop(); // 이번 pop이 기존 url이다.
