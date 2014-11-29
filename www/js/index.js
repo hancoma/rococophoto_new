@@ -54,7 +54,7 @@ var app = {
         console.log('Received Event: ' + id);
 
         var uuid=device.uuid;
-            navigator.app.overrideBackbutton(false);
+            navigator.app.overrideBackbutton(true);
 
 
      
