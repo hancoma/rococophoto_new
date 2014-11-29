@@ -56,12 +56,12 @@ if (historyUrl.length >= 1)
 var link_home= historyUrl.pop(); // 이번 pop이 기존 url이다.
 } else{
 
-         var link_home='http://m.rococophoto.net/?c=0&uuid='+uuid;
+         var link_home='http://m.rococophoto.net/index.php?uuid='+uuid;
 }
 if (link_home) {
 
 } else {
-    var link_home='http://m.rococophoto.net/?c=0';
+    var link_home='http://m.rococophoto.net/index.php';
 }
 
  navigator.notification.activityStart("RococoPhoto", "loading");
