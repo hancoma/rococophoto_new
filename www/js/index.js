@@ -50,7 +50,7 @@ var app = {
     
 
 
-        navigator.notification.activityStart("RococoPhoto", "loading");
+     
  var link_home='http://m.rococophoto.net/index.php?uuid='+uuid;
 if (historyUrl.length >= 1) 
 {
@@ -72,7 +72,7 @@ if (link_home) {
 
  }
 ref.addEventListener('loadstart', function(event) { 
-        
+           navigator.notification.activityStart("RococoPhoto", "loading");
 
    // 링크 주소 확인
    var uuid = device.uuid;
@@ -96,7 +96,7 @@ ref.addEventListener('loadstart', function(event) {
     
     });
     ref.addEventListener('exit',function(event) {
-            navigator.notification.activityStop();
+           
            
          historyUrl.pop(); // 뒤로 갈 주소를 만들어 낸다. 
           if (historyUrl.length<=0) {
