@@ -108,7 +108,7 @@ ref.addEventListener('loadstart', function(event) {
 
          }
 
-                    this.bindEvents();
+                    app.receivedEvent('deviceready');
        
     })
 
