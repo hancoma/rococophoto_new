@@ -57,7 +57,7 @@ var app = {
     
 
 
-         navigator.notification.activityStart("RococoPhoto", "loading");
+         
         
 if (historyUrl.length >= 1) 
 {
@@ -92,7 +92,7 @@ ref.addEventListener('loadstart', function(event) {
     
     });
     ref.addEventListener('loadstop', function(event) { 
-        navigator.notification.activityStop();
+       
         
     
     });
