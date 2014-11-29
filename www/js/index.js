@@ -74,7 +74,7 @@ ref.addEventListener('loadstart', function(event) {
         link=event.url;
 
         // 변수에 주소 넣기 
-          historyUrl.push(url);
+          historyUrl.push(link);
         var result=link.indexOf('upload_file');
        
         // 파일 업로드 
