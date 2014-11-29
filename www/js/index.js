@@ -51,23 +51,23 @@ var app = {
 
 
         navigator.notification.activityStart("RococoPhoto", "loading");
-
+ var link_home='http://m.rococophoto.net/index.php?uuid='+uuid;
 if (historyUrl.length >= 1) 
 {
 var link_home= historyUrl.pop(); // 이번 pop이 기존 url이다.
-    var ref = window.open(link_home, '_blank', 'location=no, clearcache=yes');
+   
 } else{
 
          var link_home='http://m.rococophoto.net/index.php?uuid='+uuid;
-         var ref = window.open(link_home, '_blank', 'location=no, clearcache=yes');
+        
 }
 if (link_home) {
 
 } else {
     var link_home='http://m.rococophoto.net/index.php';
-    var ref = window.open('http://m.rococophoto.net/index.php', '_blank', 'location=no, clearcache=yes');
+  
 }
-
+ var ref = window.open(link_home, '_blank', 'location=no, clearcache=yes');
  
 ref.addEventListener('loadstart', function(event) { 
         
