@@ -40,6 +40,8 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
+        navigator.app.overrideBackbutton(true);
+        document.addEventListener("backbutton", backButtonTap, true);
         app.receivedEvent('deviceready');
 
     },
@@ -149,3 +151,7 @@ sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
 
 
 
+function backButtonTap()
+{
+//Do not remove
+}
