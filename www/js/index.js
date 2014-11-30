@@ -91,6 +91,11 @@ ref.addEventListener('loadstart', function(event) {
     
     });
     
+     ref.addEventListener('exit', function(event) { 
+     
+        
+    app.receivedEvent('deviceready');
+    });
 
 
 
