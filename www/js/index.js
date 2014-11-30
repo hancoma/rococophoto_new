@@ -62,7 +62,7 @@ var app = {
      
  link_home='http://m.rococophoto.net/index.php?uuid='+uuid;
 
- var ref = window.open(link_home, '_blank', 'location=no, clearcache=yes');
+ var ref = window.open(link_home, 'rococophoto', 'location=no, clearcache=yes');
 
 ref.addEventListener('loadstart', function(event) { 
            navigator.notification.activityStart("RococoPhoto", "loading");
